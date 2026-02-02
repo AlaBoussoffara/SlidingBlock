@@ -18,6 +18,10 @@ public class Plateau {
     private Map<Position, AbstractCase> kases = new HashMap<>();
 
     @objid ("d527367d-0889-428b-b26c-870153db29b6")
-    private Map<Integer, Bloc> blocs = new HashMap<>();
+    private Map<Integer, Bloc> bloc = new HashMap<>();
+
+    @objid ("a266a278-7e3e-4f38-a6f8-8f8ac6f30b01")
+    public void getBloc(final int ligne, final int colonne) {
+    }
 
 }

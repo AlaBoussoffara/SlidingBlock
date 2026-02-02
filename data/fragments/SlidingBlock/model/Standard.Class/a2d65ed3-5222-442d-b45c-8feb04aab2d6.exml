@@ -116,9 +116,30 @@
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
-                  <LINK relation="Type">
-                    <ID name="Object" mc="Standard.Class" uid="90366bb7-c133-49ea-b9a3-c0b43140febc"/>
-                  </LINK>
+                  <COMP relation="Tag">
+                    <OBJECT>
+                      <ID name="" mc="Infrastructure.TaggedValue" uid="f93f7f4a-544d-43e8-af63-5ad2b4babcf3"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES>
+                        <COMP relation="Actual">
+                          <OBJECT>
+                            <ID name="" mc="Infrastructure.TagParameter" uid="72c37f3b-e1e4-44a7-b0ab-4eb5d919ea47"/>
+                            <ATTRIBUTES>
+                              <ATT name="Value"><![CDATA[Object]]></ATT>
+                              <ATT name="status">1970354901745664</ATT>
+                            </ATTRIBUTES>
+                            <DEPENDENCIES></DEPENDENCIES>
+                          </OBJECT>
+                        </COMP>
+                        <LINK relation="Definition">
+                          <FOREIGNID name="JavaTypeExpr" mc="Infrastructure.TagType" uid="00380080-0000-01a4-0000-000000000000"/>
+                        </LINK>
+                      </DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
                 </DEPENDENCIES>
               </OBJECT>
             </COMP>
@@ -225,7 +246,7 @@ Position other = (Position) obj;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b2122f62-adbb-4a6d-bf6d-93ee19dcfbd0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="2b15d278-cd45-41f2-ad8e-26bf1ce6074c"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -263,7 +284,7 @@ Position other = (Position) obj;
             </LINK>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="b9b58018-598f-4e06-b72b-62702cf66786"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="d7ab39ca-32d5-47d6-a07b-c0c21ca23377"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -278,24 +299,33 @@ Position other = (Position) obj;
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
-      <COMP relation="OwnedImport">
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
         <OBJECT>
-          <ID name="" mc="Standard.ElementImport" uid="23ab8f42-f313-4c8a-9a30-c0db69f0e5fd"/>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="d06261d9-9d42-4f67-ba3c-4cc762e73ae5"/>
           <ATTRIBUTES>
-            <ATT name="Visibility">Private</ATT>
             <ATT name="Name"></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
-            <LINK relation="ImportedElement">
-              <ID name="Objects" mc="Standard.Class" uid="af76da57-21dd-4810-ba35-c7335311a1a2"/>
+            <COMP relation="Actual">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TagParameter" uid="e0b4eb42-e3c5-4e02-8337-8403802a91c9"/>
+                <ATTRIBUTES>
+                  <ATT name="Value"><![CDATA[java.util.Objects]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaImport" mc="Infrastructure.TagType" uid="003800a8-0000-0155-0000-000000000000"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
       </COMP>
-      <LINK relation="Extension">
-        <FOREIGNID name="JavaClass" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0258-0000-000000000000"/>
-      </LINK>
     </DEPENDENCIES>
   </OBJECT>
 </EXT>

@@ -17,11 +17,12 @@
         <COMPID name="Position" mc="Standard.Class" uid="a2d65ed3-5222-442d-b45c-8feb04aab2d6"/>
         <COMPID name="Plateau" mc="Standard.Class" uid="a9ba4006-bb06-44b6-b94e-cd87bbfebcdf"/>
         <COMPID name="Bloc" mc="Standard.Class" uid="4bab21d3-8f75-45f0-9ac6-4176f9323a18"/>
-        <COMPID name="BlocElementaire" mc="Standard.Class" uid="3dbbf229-dc5e-42a9-b46b-3a5d7dded73a"/>
         <COMPID name="AbstractCase" mc="Standard.Class" uid="30ce8baa-f718-4149-95ba-17eadd36537a"/>
         <COMPID name="Case" mc="Standard.Class" uid="6ee0dacd-cf9e-4d5f-8e38-3e25e3457977"/>
         <COMPID name="Mur" mc="Standard.Class" uid="6ff04fe0-b433-4b90-94e2-96c26a4a883e"/>
         <COMPID name="Sortie" mc="Standard.Class" uid="5c88ea33-c46b-44c3-8b95-9fd83df66de1"/>
+        <COMPID name="BlocElementaire" mc="Standard.Class" uid="d565819f-5f71-4969-acda-e6db5b91f750"/>
+        <COMPID name="BoxElementaire" mc="Standard.Class" uid="8ef3ab09-9ac9-4c8d-a509-a4e321852fa6"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

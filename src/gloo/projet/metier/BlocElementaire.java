@@ -2,12 +2,12 @@ package gloo.projet.metier;
 
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
-@objid ("3dbbf229-dc5e-42a9-b46b-3a5d7dded73a")
+@objid ("d565819f-5f71-4969-acda-e6db5b91f750")
 public class BlocElementaire {
-    @objid ("1388eccb-b573-4aa4-af64-d812a2a40ace")
-    private Bloc bloc;
-
-    @objid ("5d84d0c5-11ba-4f42-a2a0-5e9ccbc7096f")
+    @objid ("6fc238a9-aae3-42f0-a8fd-99379674a210")
     private AbstractCase kase;
+
+    @objid ("86153c83-3ec1-4313-876c-e868988d7a25")
+    private Bloc bloc;
 
 }

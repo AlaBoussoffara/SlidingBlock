@@ -16,9 +16,6 @@
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedEnd">
-        <REFOBJ>
-          <ID name="blocElementaire" mc="Standard.AssociationEnd" uid="13195b9f-a275-4199-b5b2-24215fd5a565"/>
-        </REFOBJ>
         <OBJECT>
           <ID name="plateau" mc="Standard.AssociationEnd" uid="86f5ae5c-f50d-4bdd-acb0-7bad181e6b65"/>
           <ATTRIBUTES>
@@ -87,7 +84,7 @@
                         </LINK>
                         <COMP relation="Tag">
                           <OBJECT>
-                            <ID name="" mc="Infrastructure.TaggedValue" uid="a7b23edd-2fcb-4e34-bbee-ff91cccc7d1b"/>
+                            <ID name="" mc="Infrastructure.TaggedValue" uid="86747390-5be8-49a6-99fd-0ae1834691d7"/>
                             <ATTRIBUTES>
                               <ATT name="Name"></ATT>
                               <ATT name="status">1970354901745664</ATT>
@@ -163,7 +160,7 @@
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="290990ec-e8d3-49e0-9d8a-4a803439007e"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="5d830ae0-4005-43b4-a348-d441a9a94959"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -252,7 +249,82 @@
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="d06c5c0d-07dd-452d-8aae-aef8d92d15a0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="74ebb1c2-6aeb-42a4-977a-c9dcec281400"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <LINK relation="Definition">
+                    <FOREIGNID name="JavaNoInitValue" mc="Infrastructure.TagType" uid="00d007fc-0003-bf52-0000-000000000000"/>
+                  </LINK>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="blocElementaire" mc="Standard.AssociationEnd" uid="7007a3fd-d16f-4696-adc9-31bee59fc1b9"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">AccesNone</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Protected</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[blocElementaire]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="BlocElementaire" mc="Standard.Class" uid="d565819f-5f71-4969-acda-e6db5b91f750"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="Standard.AssociationEnd" uid="a566a406-0a1f-434a-b60c-b80f2b967f30"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">AccesNone</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="blocElementaire" mc="Standard.AssociationEnd" uid="7007a3fd-d16f-4696-adc9-31bee59fc1b9"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Standard.Association" uid="7d8e9bfc-1a64-4a26-b288-f5b0897bbb55"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Standard.Association" uid="7d8e9bfc-1a64-4a26-b288-f5b0897bbb55"/>
+            </COMP>
+            <COMP relation="Tag">
+              <OBJECT>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="4f96e2ee-5baf-4ac0-b11c-39ef2f984419"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
