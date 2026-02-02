@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagrame_activite" version="4">
+  <OBJECT>
+    <ID name="diagrame_activite" mc="Standard.Package" uid="03499719-a364-4b84-a494-94eb3d8e4855"/>
+    <PID name="project" mc="Standard.Package" uid="99bd200e-3fde-4642-9729-681c627c5eef"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[diagrame_activite]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="7623658b-0967-4fc7-ae2f-44f6e37ff815"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
