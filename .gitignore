@@ -1,0 +1,22 @@
+# Build output
+/bin/
+*.class
+
+# Generated docs
+/doc/
+
+# IDE / Modelio / Eclipse workspace files
+/.metadata/
+/.runtime/
+/.classpath
+/.project
+
+# Modelio backups/cache
+/data/backups/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
