@@ -16,57 +16,11 @@
       <COMP relation="OwnedElement">
         <COMPID name="metier" mc="Standard.Package" uid="c86ad65d-6ee8-4e30-8dab-759a5d100670"/>
         <COMPID name="controle" mc="Standard.Package" uid="fad6843d-2291-410e-899b-cf86da0a84e5"/>
-        <OBJECT>
-          <ID name="Direction" mc="Standard.Enumeration" uid="30722ee0-03f0-4a30-b524-282a5458095a"/>
-          <ATTRIBUTES>
-            <ATT name="IsElementary">true</ATT>
-            <ATT name="IsAbstract">false</ATT>
-            <ATT name="IsLeaf">true</ATT>
-            <ATT name="IsRoot">false</ATT>
-            <ATT name="Visibility">Public</ATT>
-            <ATT name="Name"><![CDATA[Direction]]></ATT>
-            <ATT name="status">1970354901745664</ATT>
-          </ATTRIBUTES>
-          <DEPENDENCIES>
-            <COMP relation="Value">
-              <OBJECT>
-                <ID name="HAUT" mc="Standard.EnumerationLiteral" uid="0950af96-91d4-4549-b2cd-bed13543bdec"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"><![CDATA[HAUT]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="BAS" mc="Standard.EnumerationLiteral" uid="f5e7f098-8fb4-4638-b86b-1e83db1824d9"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"><![CDATA[BAS]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="GAUCHE" mc="Standard.EnumerationLiteral" uid="044fddee-a696-4dd6-918e-cbdbb829a4e9"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"><![CDATA[GAUCHE]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-              <OBJECT>
-                <ID name="DROITE" mc="Standard.EnumerationLiteral" uid="d3328190-2c65-4eee-bded-66e9dc6dbd16"/>
-                <ATTRIBUTES>
-                  <ATT name="Name"><![CDATA[DROITE]]></ATT>
-                  <ATT name="status">1970354901745664</ATT>
-                </ATTRIBUTES>
-                <DEPENDENCIES></DEPENDENCIES>
-              </OBJECT>
-            </COMP>
-            <LINK relation="Extension">
-              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
-            </LINK>
-          </DEPENDENCIES>
-        </OBJECT>
+        <COMPID name="ConsoleSlidingBloc" mc="Standard.Class" uid="a12fc2f0-0de5-4b4c-a424-2c6a0c8453d7"/>
+        <COMPID name="PlateauFactory" mc="Standard.Class" uid="4577cfdf-e6a7-44f3-9e0e-a43d9091c3e0"/>
+        <COMPID name="TestSlidingBloc" mc="Standard.Class" uid="6ed95b2c-1398-4982-aa36-5a803c4a0d0b"/>
+        <COMPID name="ihm" mc="Standard.Package" uid="9aa1ddc2-4f1a-41d1-8f20-fa43b986483a"/>
+        <COMPID name="LancerIHM" mc="Standard.Class" uid="7acc219c-bd55-4785-8005-6e773b52f3d5"/>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

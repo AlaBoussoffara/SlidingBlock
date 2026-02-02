@@ -1,4 +1,4 @@
-package gloo.projet;
+package gloo.projet.metier;
 
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="ihm" version="4">
+  <OBJECT>
+    <ID name="ihm" mc="Standard.Package" uid="9aa1ddc2-4f1a-41d1-8f20-fa43b986483a"/>
+    <PID name="projet" mc="Standard.Package" uid="47be424c-b4dd-4cd9-95f4-692b6c9d025a"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[ihm]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="FenetreBloc" mc="Standard.Class" uid="8e59694c-5732-43af-8f88-ab71c125b671"/>
+        <COMPID name="PanneauBloc" mc="Standard.Class" uid="2745d278-43bf-4b17-b25c-e560920f3973"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

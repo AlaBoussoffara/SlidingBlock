@@ -11,6 +11,19 @@ public class Position {
     @objid ("121ae27a-ebc6-4527-bdc7-91e2831c3f79")
     private int colonne;
 
+    public Position(final int ligne, final int colonne) {
+        this.ligne = ligne;
+        this.colonne = colonne;
+    }
+
+    public int getLigne() {
+        return ligne;
+    }
+
+    public int getColonne() {
+        return colonne;
+    }
+
     @objid ("fcf5eeb5-da56-43c9-a289-4832792b4cf9")
     @Override
     public int hashCode() {

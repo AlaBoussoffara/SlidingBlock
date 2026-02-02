@@ -4,4 +4,7 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 
 @objid ("6ee0dacd-cf9e-4d5f-8e38-3e25e3457977")
 public class Case extends AbstractCase {
+    public Case(final Plateau plateau, final Position position) {
+        super(plateau, position);
+    }
 }

@@ -1,0 +1,488 @@
+\documentclass[12pt,a4paper]{article}
+
+% =========================
+% Packages
+% =========================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+\onehalfspacing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+% =========================
+% Informations du document
+% =========================
+\title{
+\textbf{2EL1520 -- Génie logiciel orienté objet} \\
+\vspace{0.5cm}
+\textbf{Projet 2025 : Sliding Block}
+}
+
+\author{
+Moez TRIKI \\
+Ala BOUSSOFFARA \\
+\vspace{0.3cm}
+CentraleSupélec
+}
+
+\date{Année universitaire 2025--2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% =========================
+% Table des matières
+% =========================
+\tableofcontents
+\newpage
+
+% =========================
+% Introduction
+% =========================
+\section{Introduction}
+
+Ce document présente le travail réalisé dans le cadre du projet du cours
+\textit{2EL1520 -- Génie logiciel orienté objet}.  
+L’objectif du projet est la conception et la réalisation d’une application permettant de jouer à un jeu de type \textit{Sliding Block}, un puzzle dans lequel le joueur doit faire sortir un bloc principal du plateau en déplaçant les autres blocs.
+Dans notre implémentation, la sortie est matérialisée par des cases spécifiques ; la victoire est atteinte lorsque le bloc principal occupe entièrement la sortie.
+
+Ce rapport décrit successivement :
+\begin{itemize}
+    \item le cahier des charges du logiciel,
+    \item l’expression des besoins du point de vue utilisateur,
+    \item la conception interne du logiciel basée sur des diagrammes UML,
+    \item la réalisation en Java et l’organisation du développement,
+    \item un bilan du projet et les perspectives d’évolution.
+\end{itemize}
+
+% =========================
+% Cahier des charges
+% =========================
+\section{Cahier des charges}
+
+Le logiciel cible un jeu de type \textit{Sliding Block} conforme au sujet du cours.
+Dans la configuration de référence (celle du TD), le plateau est de taille $5 \times 4$,
+le bloc principal (numéro 0) occupe deux cases verticales, et la sortie est située
+sur le bord droit du plateau. Le joueur doit faire sortir le bloc principal en
+déplaçant les autres blocs.
+
+\subsection{Objectif général}
+
+L’objectif du logiciel est de permettre à un utilisateur de jouer à un puzzle de type \textit{Sliding Block} dans lequel :
+\begin{itemize}
+    \item Le jeu se déroule sur un plateau rectangulaire constitué de cases,
+    \item Certains blocs peuvent être déplacés horizontalement ou verticalement,
+    \item Un bloc particulier, appelé \textit{bloc principal}, doit être sorti du plateau,
+    \item Des cases spéciales, appelées murs, empêchent tout déplacement.
+\end{itemize}
+
+\subsection{Contraintes}
+
+Le logiciel doit respecter les contraintes suivantes :
+\begin{itemize}
+    \item \textbf{Séparation MVC :} aucune dépendance à AWT/Swing ne doit apparaître dans le paquetage métier (modèle).
+    \item \textbf{Interface utilisateur :} avant toute interface graphique, une version \textit{mode texte} doit fonctionner (affichage via \texttt{toString()} et scénario piloté en Java).
+    \item \textbf{Sélection + flèches :} un déplacement nécessite d’abord la sélection d’un bloc, puis un ordre de déplacement (gauche/droite/haut/bas).
+    \item \textbf{Robustesse :} si un déplacement est impossible (mur, bloc, bord), l’état du plateau ne change pas et le système informe l’utilisateur.
+    \item \textbf{Qualité :} responsabilités uniques, données non dupliquées, attributs privés, getters/setters strictement nécessaires, navigabilités limitées, respect de la loi de Demeter.
+    \item \textbf{Évolutivité :} la conception doit faciliter l’ajout de nouvelles configurations (tailles de plateau différentes, murs, nouveaux niveaux).
+    \item \textbf{Configuration :} la génération automatique de configurations n’est pas requise ; la configuration de référence est construite en dur (TD).
+\end{itemize}
+% =========================
+% Expression des besoins
+% =========================
+\section{Expression des besoins}
+
+Cette partie décrit le comportement attendu du logiciel du point de vue de l’utilisateur, sans considération d’implémentation.
+
+\subsection{Fonctionnalités principales}
+
+Le logiciel doit permettre à l’utilisateur de :
+\begin{itemize}
+    \item visualiser l’état du plateau,
+    \item sélectionner un bloc à déplacer,
+    \item déplacer un bloc à l’aide des flèches directionnelles,
+    \item être informé si un déplacement est impossible,
+    \item détecter la condition de victoire lorsque le bloc principal occupe entièrement la sortie (ses deux cases).
+\end{itemize}
+
+\subsection{Diagramme de cas d’utilisation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{cas_utilisation.png}
+    \caption{Diagramme de cas d’utilisation du jeu Sliding Block}
+    \label{fig:usecase}
+\end{figure}
+La Figure~\ref{fig:usecase} présente le diagramme de cas d’utilisation du jeu \textit{Sliding Block}. 
+Le joueur peut afficher l’état du plateau, sélectionner un bloc, puis déplacer le bloc sélectionné. 
+Le déplacement inclut systématiquement une vérification de validité ainsi qu’une détection de la victoire (relations \texttt{<<include>>}). 
+Lorsque le déplacement demandé n’est pas réalisable, le système déclenche l’extension \texttt{<<extend>>} permettant d’informer l’utilisateur qu’il est impossible.
+
+\subsection{Diagramme d'activité}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{diagramme_activité.png}
+    \caption{Diagramme d'activité du jeu}
+    \label{fig:activité}
+\end{figure}
+La Figure~\ref{fig:activité} présente le diagramme d’activité décrivant le déroulement d’un tour de jeu.
+L’exécution commence par la réception d’une direction. Si aucun bloc n’est sélectionné, le système informe l’utilisateur
+et revient à l’attente d’une nouvelle action. Sinon, le bloc sélectionné est récupéré puis la validité du déplacement est
+vérifiée. En cas d’impossibilité, un message est affiché et l’on attend une nouvelle commande. Si le déplacement est possible,
+le plateau est mis à jour puis affiché. Enfin, une vérification de la condition de victoire est effectuée : en cas de succès,
+le système informe la victoire ; sinon, le jeu continue par une nouvelle itération.
+
+\subsection{Scénarios d’utilisation}
+
+\subsubsection{Sélection et déplacement d’un bloc}
+
+L’utilisateur sélectionne un bloc numéroté, puis tente de le déplacer dans une direction donnée.  
+Le système vérifie la validité du déplacement et met à jour l’état du plateau.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sequence_user_move.png}
+    \caption{Diagramme de séquence -- Déplacement d’un bloc}
+\end{figure}
+
+% =========================
+% Conception
+% =========================
+\section{Conception}
+
+Cette partie décrit la structure interne du logiciel et les choix de conception effectués.
+
+\subsection{Choix de conception}
+
+Les principaux choix de conception sont les suivants :
+\begin{itemize}
+    \item \textbf{Modèle métier centré sur le plateau :} le \texttt{Plateau} possède les cases, identifiées par des \texttt{Position}.
+    \item \textbf{Hiérarchie de cases :} \texttt{AbstractCase} factorise les propriétés communes et permet de spécialiser
+    le comportement via \texttt{Case}, \texttt{Mur} et \texttt{Sortie}.
+    \item \textbf{Blocs composés :} un \texttt{Bloc} est constitué d’une collection de \texttt{BlocElementaire}, ce qui permet
+    de représenter des blocs de tailles variables sans cas particuliers.
+    \item \textbf{Règle de déplacement :} lors d’un déplacement, chaque \texttt{BlocElementaire} interroge la case
+    destination via \texttt{accepte}. Un \texttt{Mur} refuse toujours, une \texttt{Sortie} n’accepte que le bloc principal
+    (numéro 0) et une \texttt{Case} accepte si elle est libre ou déjà occupée par le même bloc (déplacement interne).
+    \item \textbf{Contrôleur minimal :} le \texttt{Controleur} conserve uniquement le bloc sélectionné et délègue la logique
+    métier au modèle.
+    \item \textbf{Séparation MVC :} le métier est indépendant de l’IHM ; l’interface graphique consomme uniquement
+    l’interface \texttt{IControleur}.
+\end{itemize}
+
+\subsection{Diagramme de classes du modèle métier}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{class_diagram_metier.png}
+    \caption{Diagramme de classes du modèle métier}
+\end{figure}
+
+\subsection{Description des classes}
+
+\subsubsection{Classe \texttt{Controleur}}
+
+\textbf{Responsabilité :}  
+Le \texttt{Controleur} reçoit les actions de l’utilisateur (sélection d’un bloc puis déplacement via une direction)
+et orchestre les appels au modèle métier. Il mémorise l’état minimal nécessaire à l’interaction (ex. bloc sélectionné).
+
+\textbf{Rôle dans le modèle :}  
+Il fait le lien entre la vue (mode texte / graphique) et le modèle (\texttt{Plateau}, \texttt{Bloc}, \texttt{AbstractCase}).
+Il ne contient pas de logique d’affichage.
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{selection(int ligne, int colonne)}
+    \item \texttt{action(Direction direction)} (déclenche un déplacement, retourne un succès/échec)
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{Plateau}}
+
+\textbf{Responsabilité :}  
+La classe \texttt{Plateau} représente l’espace de jeu. Elle centralise la structure de la grille et l’accès aux cases,
+ainsi que la présence des blocs. Elle garantit la cohérence globale du plateau.
+
+\textbf{Rôle dans le modèle :}  
+\texttt{Plateau} s’appuie sur \texttt{Position} pour repérer les cases. Les différents types de cases
+(\texttt{Case}, \texttt{Mur}, \texttt{Sortie}) sont modélisés via l’héritage à partir de \texttt{AbstractCase}.
+Le plateau permet également d’identifier le bloc présent à une position donnée.
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{getCase(int ligne, int colonne)} / \texttt{getCase(Position)}
+    \item \texttt{getBloc(int ligne, int colonne)}
+    \item \texttt{estVictoire()} (bloc principal entièrement sur la sortie)
+    \item \texttt{toString()} (affichage texte)
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{Position}}
+
+\textbf{Responsabilité :}  
+\texttt{Position} encapsule des coordonnées (ligne, colonne) pour identifier une case du plateau.
+
+\textbf{Rôle dans le modèle :}  
+Elle sert de représentation stable d’une position. Elle définit \texttt{equals} et \texttt{hashCode} pour permettre
+son usage fiable dans des structures de données (ex. clé d’association avec le plateau).
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{equals(Object o)} 
+    \item \texttt{hashCode()} 
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{Bloc}}
+
+\textbf{Responsabilité :}  
+La classe \texttt{Bloc} modélise un bloc déplaçable identifié par un numéro (le bloc principal a le numéro 0).
+
+\textbf{Rôle dans le modèle :}  
+Un \texttt{Bloc} est composé de \texttt{BlocElementaire} (association \texttt{elements}). Cette composition permet de
+représenter des blocs de taille variable sans multiplier les cas particuliers.
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{getNumero()}
+    \item \texttt{getElements()} (liste en lecture seule)
+    \item \texttt{deplacer(Direction direction)}
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{BlocElementaire}}
+
+\textbf{Responsabilité :}  
+\texttt{BlocElementaire} représente un élément constituant un \texttt{Bloc}. Il permet de modéliser l’occupation du
+plateau par des unités simples.
+
+\textbf{Rôle dans le modèle :}  
+Chaque \texttt{BlocElementaire} est rattaché à un \texttt{Bloc} (lien \texttt{bloc}). 
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{getBloc()}
+    \item \texttt{getCase()}
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{AbstractCase}}
+
+\textbf{Responsabilité :}  
+\texttt{AbstractCase} factorise les propriétés communes des cases du plateau et sert de base aux différents types de cases.
+
+\textbf{Rôle dans le modèle :}  
+Elle permet au \texttt{Plateau} de manipuler une grille homogène tout en distinguant des comportements via les sous-classes
+\texttt{Case}, \texttt{Mur} et \texttt{Sortie}.
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{getPosition()}
+    \item \texttt{accepte(BlocElementaire element)}
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{Case}}
+
+\textbf{Responsabilité :}  
+\texttt{Case} représente une case standard du plateau.
+
+\textbf{Rôle dans le modèle :}  
+Elle correspond à une zone normale (ni mur, ni sortie).
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item Hérite du comportement standard de \texttt{AbstractCase}.
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{Mur}}
+
+\textbf{Responsabilité :}  
+\texttt{Mur} représente une case non occupable, utilisée pour bloquer des déplacements.
+
+\textbf{Rôle dans le modèle :}  
+Elle matérialise une contrainte du plateau : aucun bloc ne peut occuper un mur.
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{accepte(...)} redéfini pour toujours refuser un déplacement.
+\end{itemize}
+
+
+\subsubsection{Classe \texttt{Sortie}}
+
+\textbf{Responsabilité :}  
+\texttt{Sortie} représente une case spéciale liée à la condition de victoire.
+
+\textbf{Rôle dans le modèle :}  
+Elle sert à identifier la zone de sortie du plateau. 
+
+\textbf{Méthodes associées :}
+\begin{itemize}
+    \item \texttt{accepte(...)} redéfini : n’accepte que le bloc principal (numéro 0).
+\end{itemize}
+
+\subsection{Scénarios de conception}
+
+
+Le comportement du modèle métier est décrit à l’aide de diagrammes de séquence UML.  
+Chaque diagramme correspond à un scénario de jeu et permet d’identifier les opérations nécessaires dans les classes.
+
+\subsubsection{Scénario 1 : sélection d’un bloc}
+
+Dans ce scénario, l’utilisateur sélectionne le bloc situé en position \((1,1)\).  
+La Figure~\ref{fig:seq-selection} montre l’enchaînement des messages :
+
+\begin{itemize}
+    \item l’IHM appelle le contrôleur via \texttt{selection(1,1)} ;
+    \item le contrôleur interroge le plateau via \texttt{getBloc(1,1)} afin de récupérer le bloc à cette position ;
+    \item le plateau construit une instance de \texttt{Position(1,1)} puis récupère la case correspondante dans sa table interne ;
+    \item la case retourne le bloc via l’accès au \texttt{BlocElementaire}, puis le résultat remonte jusqu’au contrôleur.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{clic.jpg}
+    \caption{Diagramme de séquence -- Sélection du bloc en \((1,1)\)}
+    \label{fig:seq-selection}
+\end{figure}
+
+\subsubsection{Scénario 2 : déplacement impossible vers un mur}
+
+L’utilisateur sélectionne le bloc en \((1,1)\) puis demande un déplacement vers la gauche.
+Le contrôleur déclenche l’opération \texttt{action(Direction.GAUCHE)} qui délègue au bloc.
+Le bloc calcule la destination de chacun de ses éléments ; la case cible est un \texttt{Mur},
+donc \texttt{accepte} renvoie \texttt{false} et le déplacement est refusé.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sequence_deplacement_gauche.png}
+    \caption{Diagramme de séquence -- Déplacement impossible (mur)}
+    \label{fig:seq-gauche}
+\end{figure}
+
+\subsubsection{Scénario 3 : déplacement possible vers la droite}
+
+L’utilisateur demande ensuite un déplacement vers la droite.
+Le contrôleur appelle \texttt{action(Direction.DROITE)} et le bloc calcule les destinations,
+qui sont des cases libres. Le déplacement est validé et les cases occupées sont mises à jour.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sequence_deplacement_droite.png}
+    \caption{Diagramme de séquence -- Déplacement possible (droite)}
+    \label{fig:seq-droite}
+\end{figure}
+
+
+
+% =========================
+% Réalisation
+% =========================
+\section{Réalisation}
+
+\subsection{Transformation du modèle UML en code Java}
+
+Le développement a été mené en suivant une démarche \textit{UML $\rightarrow$ génération $\rightarrow$ complétion}.
+
+\begin{itemize}
+    \item \textbf{Modélisation initiale :} le modèle métier a été conçu dans Modelio (diagramme de classes) et les scénarios
+    principaux ont été décrits par des diagrammes de séquence .
+    \item \textbf{Génération :} les classes Java ont été générées depuis Modelio afin d’obtenir une ossature cohérente
+    (classes, associations, signatures de base).
+    \item \textbf{Complétion dans Eclipse :} le code a ensuite été complété dans Eclipse en ajoutant progressivement les méthodes
+    nécessaires au fonctionnement (logique métier, affichage texte, etc.). Les attributs et associations restent privés
+    et seuls les getters/setters strictement nécessaires sont introduits.
+    \item \textbf{Configuration de référence :} conformément aux consignes, le plateau du TD est construit en dur par du code Java
+    (pas de génération automatique ni de lecture de fichier pour les premiers tests).
+    \item \textbf{Rétro-conception (reverse) :} certaines méthodes utilitaires (constructeurs, \texttt{toString()}, etc.)
+    ont été ajoutées directement en Java, puis réintégrées dans Modelio par rétro-conception afin de maintenir la cohérence
+    UML / code.
+\end{itemize}
+
+L’architecture respecte le patron MVC : le paquetage métier ne dépend d’aucune bibliothèque d’interface graphique.
+Une version \textit{mode texte} a été réalisée en premier (affichage via \texttt{toString()} et scénarios en \texttt{main}),
+avant l’intégration de l’IHM fournie. L’interface graphique est reliée au modèle par l’interface \texttt{IControleur}
+et une classe adaptatrice qui délègue au contrôleur métier.
+
+
+
+\subsection{Organisation du développement}
+
+Le travail a été organisé en étapes itératives :
+\begin{itemize}
+    \item modélisation UML (diagramme de classes et scénarios essentiels),
+    \item génération de l’ossature Java et implémentation progressive du modèle métier,
+    \item validation en mode texte (scénarios imposés + cas de robustesse),
+    \item intégration de l’IHM fournie via l’interface \texttt{IControleur} et un adaptateur métier.
+\end{itemize}
+La répartition des tâches s’est faite par axes : modélisation et diagrammes, implémentation du modèle métier,
+tests et validation, puis intégration IHM, avec relecture croisée pour assurer la cohérence globale.
+Les fichiers de test (\texttt{TestSlidingBloc}) et de lancement graphique (\texttt{LancerIHM}) permettent de
+reproduire rapidement les scénarios et de vérifier les comportements.
+
+
+\subsection{Tests et validation}
+
+Les tests ont été réalisés par exécution de scénarios, en reproduisant les cas d’usage et les diagrammes de séquence.
+L’objectif était de vérifier la cohérence de l’état du plateau après chaque action, ainsi que la gestion des erreurs.
+
+\textbf{Stratégie.}  
+\begin{itemize}
+    \item Tests manuels pilotés par une classe dédiée (\texttt{TestSlidingBloc}) avec affichage de l’état du plateau via \texttt{toString()}.
+    \item Vérification systématique des cas \textit{nominal} et \textit{erreur} (sélection invalide, déplacement bloqué).
+    \item Exécution des scénarios imposés (sélection, déplacement impossible à gauche, déplacement possible à droite).
+\end{itemize}
+
+\textbf{Jeux de tests réalisés :} 
+\begin{itemize}
+    \item \textbf{Affichage :} le plateau construit correspond au format attendu (murs, cases vides, numéros de blocs).
+    \item \textbf{Sélection :} sélection d’un bloc existant ; tentative de sélection sur une case vide ; tentative sur un mur.
+    \item \textbf{Déplacement impossible :} tentative de déplacement vers un mur ; vers le bord ; collision avec un autre bloc.
+    \item \textbf{Déplacement possible :} déplacement d’un bloc avec mise à jour correcte des cases occupées.
+    \item \textbf{Victoire :} test de la condition de victoire (bloc principal entièrement dans la sortie).
+\end{itemize}
+
+Lorsque des anomalies ont été détectées, elles ont été corrigées puis revalidées en rejouant les scénarios correspondants.
+
+
+
+
+% =========================
+% Conclusion
+% =========================
+\section{Conclusion}
+
+Ce projet nous a permis de concevoir et de réaliser une application de type \textit{Sliding Block} en appliquant
+les principes de conception orientée objet vus en cours. La modélisation UML (diagrammes de classes, de séquence et
+d’activité) a servi de guide pour identifier les responsabilités des classes et structurer le comportement attendu,
+puis le passage UML $\rightarrow$ Java a été mené de manière progressive jusqu’à obtenir une version fonctionnelle en mode texte.
+
+La solution retenue met l’accent sur la qualité : séparation des responsabilités, encapsulation des données, limitation
+des dépendances et respect de l’architecture MVC (modèle métier indépendant de l’interface). Les tests réalisés à partir
+de scénarios représentatifs ont permis de valider les cas nominaux ainsi que les situations d’erreur (sélection invalide,
+déplacement impossible).
+
+Enfin, plusieurs pistes d’évolution sont envisageables : finaliser l’interface graphique, ajouter un chargement de niveaux
+depuis un fichier, enrichir l’outillage de tests (par exemple avec JUnit) et faciliter l’extension vers plusieurs configurations
+de plateaux et de règles de sortie. L’interface graphique fournie a été intégrée, et peut être enrichie (ergonomie, animations).
+
+
+
+\end{document}

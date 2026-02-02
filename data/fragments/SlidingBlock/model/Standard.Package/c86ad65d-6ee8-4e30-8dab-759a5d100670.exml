@@ -22,7 +22,101 @@
         <COMPID name="Mur" mc="Standard.Class" uid="6ff04fe0-b433-4b90-94e2-96c26a4a883e"/>
         <COMPID name="Sortie" mc="Standard.Class" uid="5c88ea33-c46b-44c3-8b95-9fd83df66de1"/>
         <COMPID name="BlocElementaire" mc="Standard.Class" uid="d565819f-5f71-4969-acda-e6db5b91f750"/>
-        <COMPID name="BoxElementaire" mc="Standard.Class" uid="8ef3ab09-9ac9-4c8d-a509-a4e321852fa6"/>
+        <COMPID name="BoxElementaire" mc="Standard.Class" uid="89aaa10f-9d0c-4116-85a8-e6be82350506"/>
+        <OBJECT>
+          <ID name="Direction" mc="Standard.Enumeration" uid="30722ee0-03f0-4a30-b524-282a5458095a"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[Direction]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="HAUT" mc="Standard.EnumerationLiteral" uid="0950af96-91d4-4549-b2cd-bed13543bdec"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[HAUT]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="BAS" mc="Standard.EnumerationLiteral" uid="f5e7f098-8fb4-4638-b86b-1e83db1824d9"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[BAS]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="GAUCHE" mc="Standard.EnumerationLiteral" uid="044fddee-a696-4dd6-918e-cbdbb829a4e9"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[GAUCHE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="DROITE" mc="Standard.EnumerationLiteral" uid="d3328190-2c65-4eee-bded-66e9dc6dbd16"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[DROITE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="ContenuPlateau" mc="Standard.Enumeration" uid="3a5da43c-468d-429d-aae8-0dc914c4df68"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">true</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[ContenuPlateau]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Value">
+              <OBJECT>
+                <ID name="CASE" mc="Standard.EnumerationLiteral" uid="a1339a71-ec88-43cd-a19d-eee45ca68a8a"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[CASE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="MUR" mc="Standard.EnumerationLiteral" uid="e596c0e4-7a5f-4691-85df-f074ae57c9bf"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[MUR]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+              <OBJECT>
+                <ID name="SORTIE" mc="Standard.EnumerationLiteral" uid="1db20b4d-31c1-4d49-9ebe-4ef6f479dbae"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[SORTIE]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <LINK relation="Extension">
+              <FOREIGNID name="JavaEnumeration" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0262-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
       </COMP>
       <LINK relation="Extension">
         <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>

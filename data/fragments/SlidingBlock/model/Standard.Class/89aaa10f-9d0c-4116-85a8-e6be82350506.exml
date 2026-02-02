@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="BoxElementaire" version="4">
   <OBJECT>
-    <ID name="BoxElementaire" mc="Standard.Class" uid="8ef3ab09-9ac9-4c8d-a509-a4e321852fa6"/>
+    <ID name="BoxElementaire" mc="Standard.Class" uid="89aaa10f-9d0c-4116-85a8-e6be82350506"/>
     <PID name="metier" mc="Standard.Package" uid="c86ad65d-6ee8-4e30-8dab-759a5d100670"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
@@ -17,7 +17,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedEnd">
         <OBJECT>
-          <ID name="bloc" mc="Standard.AssociationEnd" uid="ce060e75-c425-4b9f-92a7-75cd920b79b4"/>
+          <ID name="bloc" mc="Standard.AssociationEnd" uid="5e15fade-5a0e-41c2-9eae-603d63e15c96"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -39,7 +39,7 @@
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="bb27ce2f-8723-41d7-a5c0-317b430599ab"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="72c23e14-eaab-4cf3-b074-a979e81761f8"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -57,11 +57,11 @@
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="bloc" mc="Standard.AssociationEnd" uid="ce060e75-c425-4b9f-92a7-75cd920b79b4"/>
+                    <COMPID name="bloc" mc="Standard.AssociationEnd" uid="5e15fade-5a0e-41c2-9eae-603d63e15c96"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="7a0e17a4-9934-486f-8773-c5af43669a1d"/>
+                      <ID name="" mc="Standard.Association" uid="7286f780-69eb-4acf-9726-340cd1413f1c"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -73,11 +73,11 @@
               </OBJECT>
             </COMP>
             <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="7a0e17a4-9934-486f-8773-c5af43669a1d"/>
+              <COMPID name="" mc="Standard.Association" uid="7286f780-69eb-4acf-9726-340cd1413f1c"/>
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="eec11ae0-3fd6-4c81-8051-1e8ffe113751"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="02a7a9bd-4835-4665-a339-a14ccd9bf490"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -92,7 +92,7 @@
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="kase" mc="Standard.AssociationEnd" uid="a634c685-76f2-41bd-a430-e21a641c5fcd"/>
+          <ID name="kase" mc="Standard.AssociationEnd" uid="6e60b22a-e3db-46aa-b69f-cb14bddf0dc8"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -114,7 +114,7 @@
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="Standard.AssociationEnd" uid="c52f82fb-b0c1-462d-8277-7a0f6381b514"/>
+                <ID name="" mc="Standard.AssociationEnd" uid="8aa6ea58-b168-4817-b88b-e1428b25e768"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -132,11 +132,11 @@
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="kase" mc="Standard.AssociationEnd" uid="a634c685-76f2-41bd-a430-e21a641c5fcd"/>
+                    <COMPID name="kase" mc="Standard.AssociationEnd" uid="6e60b22a-e3db-46aa-b69f-cb14bddf0dc8"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
-                      <ID name="" mc="Standard.Association" uid="df04096c-13da-4088-8cbc-878ef8ca8f9d"/>
+                      <ID name="" mc="Standard.Association" uid="bb8add29-58a3-4db9-a29a-bade656c8e39"/>
                       <ATTRIBUTES>
                         <ATT name="Name"></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -148,11 +148,11 @@
               </OBJECT>
             </COMP>
             <COMP relation="Association">
-              <COMPID name="" mc="Standard.Association" uid="df04096c-13da-4088-8cbc-878ef8ca8f9d"/>
+              <COMPID name="" mc="Standard.Association" uid="bb8add29-58a3-4db9-a29a-bade656c8e39"/>
             </COMP>
             <COMP relation="Tag">
               <OBJECT>
-                <ID name="" mc="Infrastructure.TaggedValue" uid="f98155e8-ccac-4312-b52b-af57c6e863b0"/>
+                <ID name="" mc="Infrastructure.TaggedValue" uid="0051b172-f7da-4e39-b5d3-d061b5b349c1"/>
                 <ATTRIBUTES>
                   <ATT name="Name"></ATT>
                   <ATT name="status">1970354901745664</ATT>

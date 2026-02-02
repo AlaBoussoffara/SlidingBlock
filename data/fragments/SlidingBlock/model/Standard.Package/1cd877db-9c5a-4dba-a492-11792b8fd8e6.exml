@@ -14,7 +14,9 @@
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedBehavior">
-        <COMPID name="Interaction" mc="Standard.Interaction" uid="a0b64904-a08e-456a-937a-a7e9078ff5b3"/>
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="31082bad-c01d-418f-ab62-11a8db0a3a69"/>
+        <COMPID name="Gauche" mc="Standard.Interaction" uid="8a3927cd-8693-4029-8a92-18306de7085a"/>
+        <COMPID name="Droite" mc="Standard.Interaction" uid="de9ffa25-ce58-464a-ab10-051799d822b2"/>
       </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="gloo" mc="Standard.Package" uid="7d9721d4-66f1-400e-972c-ce70dd14110e"/>

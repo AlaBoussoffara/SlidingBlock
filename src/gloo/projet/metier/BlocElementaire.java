@@ -10,4 +10,26 @@ public class BlocElementaire {
     @objid ("86153c83-3ec1-4313-876c-e868988d7a25")
     private Bloc bloc;
 
+    public BlocElementaire(final Bloc bloc, final AbstractCase kase) {
+        if (bloc == null || kase == null) {
+            throw new IllegalArgumentException("bloc and case must be non-null");
+        }
+        this.bloc = bloc;
+        this.kase = kase;
+        this.bloc.ajouterElement(this);
+        this.kase.setBlocElementaire(this);
+    }
+
+    public Bloc getBloc() {
+        return bloc;
+    }
+
+    public AbstractCase getCase() {
+        return kase;
+    }
+
+    void setCase(final AbstractCase kase) {
+        this.kase = kase;
+    }
+
 }
