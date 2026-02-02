@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SlidingBlock" version="4">
+  <OBJECT>
+    <ID name="SlidingBlock" mc="Standard.Project" uid="60e5cfce-8636-4546-a73d-26d2599d34ef"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[SlidingBlock]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="slidingblock" mc="Standard.Package" uid="1cd877db-9c5a-4dba-a492-11792b8fd8e6"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="SlidingBlock" mc="Infrastructure.DiagramSet" uid="efe0604b-2ca4-44f2-b11c-acede07d37d7"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

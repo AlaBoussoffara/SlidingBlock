@@ -1,0 +1,7 @@
+#Mon Feb 02 13:36:12 CET 2026
+org.modelio.app.diagram.editor.OpenedDiagrams0='metier Class diagram' {21c87e20-6c12-4188-bb41-9c5117195f32} Standard.ClassDiagram
+org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.app.ui.model.perspective.parentId=org.modelio.app.bottom.parts
+org.modelio.app.diagram.editor.OpenedDiagrams1='Interaction Sequence diagram' {ed358b4e-1c10-4865-b161-6affa1fa973e} Standard.SequenceDiagram
+org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.full.perspective.parentId=app.ui.ext_com.partstack.bottom
+org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.diagram.perspective.parentId=app.ui.ext_com.partstack.right
+org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.development.perspective.parentId=app.ui.ext_com.partstack.bottom

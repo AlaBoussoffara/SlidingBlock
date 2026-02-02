@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="slidingblock" version="4">
+  <OBJECT>
+    <ID name="slidingblock" mc="Standard.Package" uid="1cd877db-9c5a-4dba-a492-11792b8fd8e6"/>
+    <PID name="SlidingBlock" mc="Standard.Project" uid="60e5cfce-8636-4546-a73d-26d2599d34ef"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[slidingblock]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="a0b64904-a08e-456a-937a-a7e9078ff5b3"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="gloo" mc="Standard.Package" uid="7d9721d4-66f1-400e-972c-ce70dd14110e"/>
+        <COMPID name="java" mc="Standard.Package" uid="4c21c5b4-d84f-45b3-93ee-10405163ffb4"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

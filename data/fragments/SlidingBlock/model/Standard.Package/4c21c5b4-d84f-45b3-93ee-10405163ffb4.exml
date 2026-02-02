@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="java" version="4">
+  <OBJECT>
+    <ID name="java" mc="Standard.Package" uid="4c21c5b4-d84f-45b3-93ee-10405163ffb4"/>
+    <PID name="slidingblock" mc="Standard.Package" uid="1cd877db-9c5a-4dba-a492-11792b8fd8e6"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[java]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="util" mc="Standard.Package" uid="8eefdd8a-a72c-45b7-8cf4-1273ac4d2682"/>
+        <COMPID name="lang" mc="Standard.Package" uid="a7a8df48-749a-48ba-ac34-4bd825246874"/>
+      </COMP>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaPackage" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0126-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="1de77715-5f90-4322-ab9c-b2fc23c2896f"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaExtern" mc="Infrastructure.TagType" uid="003800a8-0000-0197-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

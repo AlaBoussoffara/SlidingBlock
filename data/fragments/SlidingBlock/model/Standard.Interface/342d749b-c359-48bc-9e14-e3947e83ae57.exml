@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="List" version="4">
+  <OBJECT>
+    <ID name="List" mc="Standard.Interface" uid="342d749b-c359-48bc-9e14-e3947e83ae57"/>
+    <PID name="util" mc="Standard.Package" uid="8eefdd8a-a72c-45b7-8cf4-1273ac4d2682"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">true</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[List]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="Extension">
+        <FOREIGNID name="JavaInterface" mc="Infrastructure.Stereotype" uid="01ec23a8-0000-0267-0000-000000000000"/>
+      </LINK>
+      <COMP relation="Tag">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.TaggedValue" uid="11012002-6e40-4a03-b6cf-9c9f8ce4e6ea"/>
+          <ATTRIBUTES>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Definition">
+              <FOREIGNID name="JavaExtern" mc="Infrastructure.TagType" uid="258012b4-0000-0423-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
