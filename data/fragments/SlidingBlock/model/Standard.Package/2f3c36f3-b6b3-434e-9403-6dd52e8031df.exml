@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagrame_activite" version="4">
+  <OBJECT>
+    <ID name="diagrame_activite" mc="Standard.Package" uid="2f3c36f3-b6b3-434e-9403-6dd52e8031df"/>
+    <PID name="slidingblock" mc="Standard.Package" uid="1cd877db-9c5a-4dba-a492-11792b8fd8e6"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[diagrame_activite]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="6502d242-e054-4ad4-80c6-ea74d9a3bc72"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -21,6 +21,8 @@
       <COMP relation="OwnedElement">
         <COMPID name="gloo" mc="Standard.Package" uid="7d9721d4-66f1-400e-972c-ce70dd14110e"/>
         <COMPID name="java" mc="Standard.Package" uid="4c21c5b4-d84f-45b3-93ee-10405163ffb4"/>
+        <COMPID name="diagrame_activite" mc="Standard.Package" uid="2f3c36f3-b6b3-434e-9403-6dd52e8031df"/>
+        <COMPID name="diagrame_utilisation" mc="Standard.Package" uid="e96f42a4-ae0b-4a43-ba49-a9ee5ce23586"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

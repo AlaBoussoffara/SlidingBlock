@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagrame_utilisation" version="4">
+  <OBJECT>
+    <ID name="diagrame_utilisation" mc="Standard.Package" uid="e96f42a4-ae0b-4a43-ba49-a9ee5ce23586"/>
+    <PID name="slidingblock" mc="Standard.Package" uid="1cd877db-9c5a-4dba-a492-11792b8fd8e6"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[diagrame_utilisation]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="joueur" mc="Standard.Actor" uid="74835e27-39fe-4e73-888e-4269fd15386d"/>
+        <COMPID name="Afficher l'etat du plateau" mc="Standard.UseCase" uid="607b6d4b-e2fe-4ef6-b103-7320139344e9"/>
+        <COMPID name="Sélectionner un bloc" mc="Standard.UseCase" uid="a36f4802-3282-4d0f-b08c-a229bc22a5e8"/>
+        <COMPID name="Déplacer le bloc sélectionné" mc="Standard.UseCase" uid="d7d4118b-a1c8-4115-8ba5-cbadc1534e33"/>
+        <COMPID name="Vérifier validité du déplacement" mc="Standard.UseCase" uid="7f3be49b-b012-4297-b40b-7699488f2b45"/>
+        <COMPID name="Détecter la victoire" mc="Standard.UseCase" uid="b40ea7e3-a172-4f34-9ddd-87f32f42f39c"/>
+        <COMPID name="Informer déplacement impossible" mc="Standard.UseCase" uid="b97ae992-9bce-4ab7-bc7f-49f56ee8b1ad"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="project Use Case diagram" mc="Standard.UseCaseDiagram" uid="f50c51b2-f705-4908-94e9-63121324d624"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
