@@ -1,4 +1,4 @@
-#Mon Feb 02 22:41:54 CET 2026
+#Mon Feb 02 22:43:25 CET 2026
 org.modelio.app.diagram.editor.OpenedDiagrams0='metier Class diagram' {21c87e20-6c12-4188-bb41-9c5117195f32} Standard.ClassDiagram
 org.modelio.app.diagram.editor.OpenedDiagrams3='Activity Activity diagram' {bdf680c7-716f-4d03-9979-eff392b81d2e} Standard.ActivityDiagram
 org.modelio.app.module.propertytab.GModule\ [id\='JavaDesigner',\ version\='5.4.02',\ type\='MODULE',\ definitionScope\='LOCAL',\ state\='MOUNTED']\ runtime\ module_.org.modelio.app.ui.model.perspective.parentId=org.modelio.app.bottom.parts
